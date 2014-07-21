@@ -1,0 +1,29 @@
+===============
+
+Normalizer
+Version 1.0
+January 13, 2012
+Created by Michael Weigle
+License: MIT
+
+===============
+
+This script parses an XML file (or a directory containing XML files) and wraps "ref" elements around any mention of an exhibit inside a "note" element.
+
+An "exhibit mention" occurs case insensitive at "ex.", "ex", or "exhibit".
+
+
+Usage: normalize [-f relative_filename] [-d relative_directory]
+
+
+The mechanism for determining what to wrap is as follows:
+
+1. Grab a list of "note" elements using XPath
+2. Using regular expressions on the text of every "note" element:
+	a. Prepend the "ref" element each time an "ex" (case insensitive) pattern was matched
+	b. Jump ahead one wordgroup (a wordgroup being any combination of letters and numbers)
+	c. Close the "ref" element after wordgroup (which can be assumed to be the exhibit number)
+
+Known Bugs:
+
+1. The script assumes everything in the directory is an XML file and will work on everything in the directory it's given.

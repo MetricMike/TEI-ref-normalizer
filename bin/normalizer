@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'normalizer/runner'
+
+runner = Normalizer::Runner.new(ARGV)

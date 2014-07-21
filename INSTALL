@@ -1,0 +1,5 @@
+To install, simply run "gem install normalizer-1.0.0.gem".
+
+Depending on your permissions and where you have Ruby installed, you may have to run the command as "sudo".
+
+After installation, you can run normalizer from the command line.
